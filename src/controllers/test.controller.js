@@ -1,12 +1,16 @@
-import { poolLocal, poolAzure } from '../db_conexion/conexionTest'
-import { Client } from 'pg'
+require('dotenv').config()
 
+import { Pool} from 'pg'
+import { poolLocal, poolAzureMain, connectionString } from '../db_conexion/conexionTest'
 
 const showTest = (req,res) => {
     res.json('test routes 1')
 }
 
 const getUsers = async (req,res) => {
+    const poolAzure = new Pool({
+        connectionString: process.env.POSTGRESQLCONNSTR_TestPostgresqlAzure || connectionString
+    })
     try {
         console.log('Metodo: GET  , Ruta: /test/users')
         console.log('Conectandose a la Base de Datos ...')
@@ -17,7 +21,7 @@ const getUsers = async (req,res) => {
         const result = await clientAzure.query(query)
         clientAzure.release() // Liberar el cliente al devolverlo al pool
         
-        console.log('Resultados de la consulta:', result)
+        console.log('Resultados de la consulta:', result.rows)
         res.json(result.rows)
     }catch(err){
         console.error('Error al conectar o ejecutar la consulta', err);

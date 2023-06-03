@@ -20,12 +20,13 @@ const port = process.env.PGPORT
 
 const connectionString = `postgresql://${user}:${password}@${host}:${port}/${database}?sslmode=require`;
 
-const poolAzure = new Pool({
-  connectionString: connectionString
+const poolAzureMain = new Pool({
+  connectionString: process.env.POSTGRESQLCONNSTR_TestPostgresqlAzure || connectionString
 });
 
 
 module.exports = {
     poolLocal,
-    poolAzure
+    poolAzureMain,
+    connectionString
 }
