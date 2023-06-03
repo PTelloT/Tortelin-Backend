@@ -1,11 +1,11 @@
 export class usuario {
-    constructor(dni, nombre, ap, email, pass, dateCreated, estado) {
+    constructor(dni, nombre, ap, email, pass, createdDate, estado) {
         this.dni = dni;
         this.nombre = nombre;
         this.ap = ap;
         this.email = email;
         this.pass = pass;
-        this.dateCreated = dateCreated;
+        this.createdDate = createdDate;
         this.estado = estado;
     }
 }

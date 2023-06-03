@@ -1,10 +1,12 @@
 export class producto {
-    constructor(nombre, desc, precio, stock, idCat) {
+    constructor(id, idCat, nombre, desc, precio, moneda, estado) {
+        this.id = id;
+        this.idCat = idCat;
         this.nombre = nombre;
         this.desc = desc;
         this.precio = precio;
-        this.stock = stock;
-        this.idCat = idCat;
+        this.moneda = moneda;
+        this.estado = estado;
     }
     getNombre() {}
     setNombre() {}

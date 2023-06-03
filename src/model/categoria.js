@@ -1,9 +1,10 @@
 export class categoria {
-    constructor(nombre, desc, fCreacion, dateLastUpd) {
+    constructor(id, nombre, desc, createdDate, lastUpdDate) {
+        this.id = id;
         this.nombre = nombre;
         this.desc = desc;
-        this.fCreacion = fCreacion;
-        this.dateLastUpd = dateLastUpd;
+        this.createdDate = createdDate;
+        this.lastUpdDate = lastUpdDate;
     }
     getNombre() {}
     setNombre() {}

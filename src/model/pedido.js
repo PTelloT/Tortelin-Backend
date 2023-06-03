@@ -1,11 +1,13 @@
 export class pedido {
-    constructor(id, dni, fecha, idDirEnv, cantCompras, montoCompra, estado) {
+    constructor(id, dni, idDirEnv, idLocal, idMetPago, createdDate, montoTotal, moneda, estado) {
         this.id = id;
         this.dni = dni;
-        this.fecha = fecha;
         this.idDirEnv = idDirEnv;
-        this.cantCompras = cantCompras;
-        this.montoCompra = montoCompra;
+        this.idLocal = idLocal;
+        this.idMetPago = idMetPago;
+        this.createdDate = createdDate;
+        this.montoTotal = montoTotal;
+        this.moneda = moneda;
         this.estado = estado;
     }
 }
